@@ -1,15 +1,11 @@
-import { useRouter } from "next/dist/client/router";
 import { Container, Badge, Spinner } from "@chakra-ui/react";
 import Layout from "../../components/layouts/article";
 import { Title, ArticleBody } from "../../components/post";
 
-const PostDetail = ({ postList }) => {
-  const router = useRouter();
-  const { id } = router.query;
-  const post = postList[id - 1];
+const PostDetail = ({ post }) => {
   const body = `<div class='post-body'>${post?.description}</div>`;
 
-  if (!postList) {
+  if (!post) {
     return <Spinner />;
   }
 
@@ -27,15 +23,38 @@ const PostDetail = ({ postList }) => {
 
 export default PostDetail;
 
-export const getServerSideProps = async () => {
-  const response = await fetch(
+export const getStaticPaths = async () => {
+  const res = await fetch(
     `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@o-sofuoglu`
   );
-  const data = await response.json();
+  const data = await res.json();
+
+  const paths = data.items.map((post, idx) => {
+    return {
+      params: {
+        id: `${idx + 1}`,
+      },
+    };
+  });
 
   return {
+    paths,
+    fallback: false,
+  };
+};
+
+export const getStaticProps = async (context) => {
+  console.log(`context`, context);
+  const { params } = context;
+  const res = await fetch(
+    `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@o-sofuoglu`
+  );
+  const data = await res.json();
+  const post = data.items[params.id - 1];
+  return {
     props: {
-      postList: data.items,
+      post,
     },
+    revalidate: 100,
   };
 };
