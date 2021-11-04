@@ -32,7 +32,6 @@ export const getServerSideProps = async () => {
     `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@o-sofuoglu`
   );
   const data = await response.json();
-  console.log(data);
 
   return {
     props: {
