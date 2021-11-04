@@ -89,7 +89,7 @@ const Projects = () => {
             </WorkGridItem>
           </Section>
           <Section delay={0.4}>
-            <Link href="https:/github.com/ogzhnsfgl" target="_blank">
+            <Link href="https://www.github.com/ogzhnsfgl" target="_blank">
               <Button
                 variant="ghost"
                 colorScheme="teal"
