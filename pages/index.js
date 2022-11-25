@@ -71,15 +71,12 @@ const Page = () => {
             Who am I?
           </Heading>
           <Paragraph>
-            Oğuzhan graduated from the Civil Engineering department of Yıldız
-            Technical University in 2018. After that, He worked in various
-            companies and positions in this field for almost 3 years and
-            successfully complete all responsibilities Then he decided to follow
-            his passion that software development especially the front-end side.
-            Therefore, he still working to improve Front-End Skills such as
-            Javascript, React, CSS. Keywords to describe him are
-            deep-researcher, curious and positive energy-bomb. He will always
-            try to reach his dreams.
+            I graduated from Yildiz Technical University ‘18, Civil Engineering
+            department, and after 3 years working as a civil engineer, I decided
+            to change my career. I am working for a year as a Jr. Frontend
+            Developer with ReactJs, NextJs, Typescript and other technologies.
+            Also, I have written unit tests for all my implementations. I love
+            to learn new things and javascript development.
           </Paragraph>
           <Box align="center" my={4}>
             <NextLink href="/projects">
@@ -93,10 +90,9 @@ const Page = () => {
           <Heading as="h3" variant="section-title">
             Bio
           </Heading>
-
           <BioSection>
-            <BioYear>2021 to Present</BioYear>
-            Working on software development
+            <BioYear>Dec,2021 to Present</BioYear>
+            Jr. Frontend Developer | Ciceksepeti.com/Mizu.com
           </BioSection>
           <Divider my={1} />
           <BioSection>
@@ -129,10 +125,13 @@ const Page = () => {
             I ♥
           </Heading>
           <Paragraph>
-            <Link href="#"> Music, </Link>
-            <Link href="#"> Cycling, </Link>
-            <Link href="#"> Cinema, </Link>
-            Swimming and Art (especially visual art)
+            <Link href="https://open.spotify.com/user/ogzhnn?si=9957db334bd44657">
+              {" "}
+              Music,{" "}
+            </Link>
+            Cycling,
+            <Link href="https://letterboxd.com/ogzhnsfgl/"> Cinema, </Link>
+            Swimming and Art (especially visual art).
           </Paragraph>
         </Section>
         <Section delay={0.6}>
