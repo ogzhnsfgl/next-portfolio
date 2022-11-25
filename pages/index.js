@@ -92,7 +92,7 @@ const Page = () => {
           </Heading>
           <BioSection>
             <BioYear>Dec,2021 to Present</BioYear>
-            Jr. Frontend Developer | Ciceksepeti.com/Mizu.com
+            Jr. Frontend Developer | Ciceksepeti.com / Mizu.com
           </BioSection>
           <Divider my={1} />
           <BioSection>
