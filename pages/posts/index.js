@@ -28,7 +28,7 @@ export default Posts;
 
 export const getStaticProps = async () => {
   const response = await fetch(
-    `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@o-sofuoglu`
+    `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@osofuoglu`
   );
   const data = await response.json();
 

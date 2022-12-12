@@ -2,22 +2,17 @@ import {
   Box,
   Container,
   Heading,
-  Image,
   useColorModeValue,
   Link,
   Button,
   SimpleGrid,
   Icon,
-  List,
-  ListItem,
   GridItem,
-  Divider,
+  Text
 } from "@chakra-ui/react";
 import Section from "../components/section";
 import Layout from "../components/layouts/article";
 import Paragraph from "../components/paragraph";
-import NextLink from "next/link";
-import { ChevronRightIcon } from "@chakra-ui/icons";
 import { BioSection, BioYear } from "../components/bio";
 import {
   IoLogoTwitter,
@@ -27,8 +22,13 @@ import {
   IoLogoMedium,
   IoMail,
 } from "react-icons/io5";
+import Image from "next/image";
+import styled from "@emotion/styled";
+import { PostGridItem } from "../components/grid-item";
 
-const Page = () => {
+const Page = ({postList,image}) => {
+
+
   return (
     <Layout>
       <Container>
@@ -36,7 +36,7 @@ const Page = () => {
           borderRadius="lg"
           bg={useColorModeValue("whiteAlpha.500", "whiteAlpha.200")}
           p={3}
-          mb={6}
+          my={12}
           align="center"
         >
           Hello, I'm software developer from Turkey.
@@ -46,24 +46,32 @@ const Page = () => {
             <Heading as="h2" variant="page-title">
               Oğuzhan Sofuoğlu
             </Heading>
-            <p> Software Developer ( JavaScript | React | .NET )</p>
+                <Text color={useColorModeValue("blackAlpha.700", "whiteAlpha.600")}>Frontend Developer - @Ciceksepeti, Ankara</Text>
           </Box>
           <Box
             flexShrink={0}
-            mt={{ base: 4, md: 0 }}
             ml={{ md: 6 }}
+            mt={{ base: 4, md: 0 }}
             textAlign="center"
           >
-            <Image
+            <Box
               borderColor="whiteAlpha.800"
               borderWidth={2}
               borderStyle="solid"
               maxWidth="100px"
-              display="inline-block"
               borderRadius="full"
-              src="/images/oguzhan-pp.jpg"
-              alt="ProfilePic"
-            />
+              display="inline-block"
+              overflow={"hidden"}
+              height="100px"
+              width="100px"
+            >
+              <Image
+                alt="ProfilePic"
+                src={image}
+                width={100}
+                height={100}
+              />
+            </Box>
           </Box>
         </Box>
         <Section delay={0.2}>
@@ -78,13 +86,6 @@ const Page = () => {
             Also, I have written unit tests for all my implementations. I love
             to learn new things and javascript development.
           </Paragraph>
-          <Box align="center" my={4}>
-            <NextLink href="/projects">
-              <Button rightIcon={<ChevronRightIcon />} colorScheme="teal">
-                My Portfolio
-              </Button>
-            </NextLink>
-          </Box>
         </Section>
         <Section delay={0.4}>
           <Heading as="h3" variant="section-title">
@@ -94,46 +95,22 @@ const Page = () => {
             <BioYear>Dec,2021 to Present</BioYear>
             Jr. Frontend Developer | Ciceksepeti.com / Mizu.com
           </BioSection>
-          <Divider my={1} />
-          <BioSection>
-            <BioYear>2021</BioYear>
-            Patika.dev & Çiçeksepeti React Bootcamp Student
-          </BioSection>
-          <Divider my={1} />
-          <BioSection>
-            <BioYear>2021</BioYear>
-            BilgeAdam Boost Fullstack Bootcamp Student
-          </BioSection>
-          <Divider my={1} />
-          <BioSection>
-            <BioYear>2018-2021</BioYear>
-            Worked as civil engineer at various companies
-          </BioSection>
-          <Divider my={1} />
-          <BioSection>
-            <BioYear>2018</BioYear>
-            Graduate from Yıldız Technical University Civil Engineering
-          </BioSection>
-          <Divider my={1} />
-          <BioSection>
-            <BioYear>1994</BioYear>
-            Born in Rize, Turkey
-          </BioSection>
         </Section>
         <Section delay={0.5}>
-          <Heading as="h3" variant="section-title">
-            I ♥
+         <Heading as="h3" variant="section-title">
+            Posts
           </Heading>
-          <Paragraph>
-            <Link href="https://open.spotify.com/user/ogzhnn?si=9957db334bd44657">
-              {" "}
-              Music,{" "}
-            </Link>
-            Cycling,
-            <Link href="https://letterboxd.com/ogzhnsfgl/"> Cinema, </Link>
-            Swimming and Art (especially visual art).
-          </Paragraph>
-        </Section>
+        <SimpleGrid columns={[1, 2, 2]} gap={6}>
+          {postList.map((post, idx) => (
+            <PostGridItem
+              title={post.title}
+              thumbnail={post.thumbnail}
+              key={post.title}
+              href={`posts/${idx + 1}`}
+            />
+          ))}
+        </SimpleGrid>
+      </Section>
         <Section delay={0.6}>
           <Heading as="h3" variant="section-title">
             Social Media & Contact
@@ -216,3 +193,18 @@ const Page = () => {
 };
 
 export default Page;
+
+export const getStaticProps = async () => {
+  const response = await fetch(
+    `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@osofuoglu`
+  );
+  const data = await response.json();
+
+  return {
+    props: {
+      postList: data.items,
+      image : data.feed.image
+    },
+    revalidate: 100,
+  };
+};

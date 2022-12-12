@@ -37,7 +37,7 @@ const Logo = () => {
             fontWeight="bold"
             ml={3}
           >
-            Oğuzhan Sofuoğlu
+            o5n
           </Text>
         </LogoBox>
       </a>

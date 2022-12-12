@@ -73,9 +73,6 @@ const Navbar = (props) => {
           <LinkItem href="/posts" path={path}>
             Posts
           </LinkItem>
-          <LinkItem href="https://www.github.com/ogzhnsfgl" path={path}>
-            View Source
-          </LinkItem>
         </Stack>
         <Box flex={1} align="right">
           <ThemeToggleButton />
@@ -96,9 +93,6 @@ const Navbar = (props) => {
                 </NextLink>
                 <NextLink href="/posts" passHref>
                   <MenuItem as={Link}>Posts</MenuItem>
-                </NextLink>
-                <NextLink href="https://www.github.com/ogzhnsfgl" passHref>
-                  <MenuItem as={Link}>View Source</MenuItem>
                 </NextLink>
               </MenuList>
             </Menu>
