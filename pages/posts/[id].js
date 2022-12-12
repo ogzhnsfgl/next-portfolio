@@ -11,7 +11,7 @@ const PostDetail = ({ post }) => {
 
   return (
     <Layout title={post?.title}>
-      <Container maxWidth="100%">
+      <Container maxWidth="100%" mt={12}>
         <Title>
           {post?.title} <Badge>{post?.pubDate}</Badge>
         </Title>
