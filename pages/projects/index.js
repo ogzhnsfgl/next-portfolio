@@ -24,7 +24,7 @@ const Projects = () => {
   return (
     <Layout>
       <Container>
-        <Heading as="h3" fontSize={20} mb={4}>
+        <Heading as="h3" fontSize={20} my={12}>
           Projects
         </Heading>
         <SimpleGrid columns={[1, 1, 2]} gap={6}>

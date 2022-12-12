@@ -23,7 +23,7 @@ import {
   IoMail,
 } from "react-icons/io5";
 import Image from "next/image";
-import { PostGridItem } from "../components/grid-item";
+import {  PostIndexGridItem } from "../components/grid-item";
 
 const Page = ({postList,image}) => {
   return (
@@ -98,16 +98,16 @@ const Page = ({postList,image}) => {
          <Heading as="h3" variant="section-title">
             Posts
           </Heading>
-        <SimpleGrid columns={[1, 2, 2]} gap={6}>
+        <Box >
           {postList.map((post, idx) => (
-            <PostGridItem
+            <PostIndexGridItem
               title={post.title}
               thumbnail={post.thumbnail}
               key={post.title}
               href={`posts/${idx + 1}`}
             />
           ))}
-        </SimpleGrid>
+        </Box>
       </Section>
         <Section delay={0.6}>
           <Heading as="h3" variant="section-title">

@@ -1,7 +1,10 @@
 import NextLink from "next/link";
 import Image from "next/image";
-import { Box, Text, LinkBox, LinkOverlay } from "@chakra-ui/react";
+import { Box, Text, LinkBox, LinkOverlay, Divider, Icon, Link, useColorModeValue } from "@chakra-ui/react";
 import { Global } from "@emotion/react";
+import {
+IoLogoMedium
+} from "react-icons/io5";
 
 export const GridItem = ({ children, href, title, thumbnail }) => (
   <Box w="100%" textAlign="center">
@@ -28,7 +31,6 @@ export const PostGridItem = ({ children, href, title, thumbnail }) => (
         src={thumbnail}
         alt={title}
         className="grid-item-thumbnail"
-        loading="lazy"
         width="600"
         height="380"
         priority
@@ -38,6 +40,22 @@ export const PostGridItem = ({ children, href, title, thumbnail }) => (
       </LinkOverlay>
       <Text fontSize={14}>{children}</Text>
     </LinkBox>
+  </Box>
+);
+
+export const PostIndexGridItem = ({  href, title }) => (
+  <Box w="100%" textAlign="left" pb={4}>
+    <LinkBox cursor="pointer">
+      <NextLink href={href}>
+        <Link>
+          <LinkOverlay color={useColorModeValue("teal.600", "teal.200")} display={"flex"} alignItems={'center'}  >
+            <Icon as={IoLogoMedium} mr={4}/>
+            <Text fontWeight={600}>{title}</Text>
+          </LinkOverlay>
+        </Link>
+      </NextLink>
+    </LinkBox>
+    <Divider mt={2}/>
   </Box>
 );
 
