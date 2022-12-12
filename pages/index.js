@@ -114,9 +114,10 @@ const Page = ({postList,image}) => {
             Social Media & Contact
           </Heading>
           <SimpleGrid columns={{ sm: 2 }} gap={1}>
-            <GridItem>
-              <Link href="https://www.github.com/ogzhnsfgl" target="_blank">
+            <GridItem >
+              <Link href="https://www.github.com/ogzhnsfgl" target="_blank" _hover={{borderBottom:'1px solid teal'}} >
                 <Button
+                  _hover={'none'}
                   p={0}
                   variant="ghost"
                   colorScheme="teal"
@@ -127,8 +128,9 @@ const Page = ({postList,image}) => {
               </Link>
             </GridItem>
             <GridItem>
-              <Link href="mailto://o.sofuoglu@yahoo.com" target="_blank">
+              <Link href="mailto://o.sofuoglu@yahoo.com" target="_blank" _hover={{borderBottom:'1px solid teal'}} >
                 <Button
+                _hover={'none'}
                   p={0}
                   variant="ghost"
                   colorScheme="teal"
@@ -141,9 +143,10 @@ const Page = ({postList,image}) => {
             <GridItem>
               <Link
                 href="https://www.linkedin.com/in/oguzhan-sofuoglu/"
-                target="_blank"
+                target="_blank" _hover={{borderBottom:'1px solid teal'}}
               >
                 <Button
+                _hover={'none'}
                   p={0}
                   variant="ghost"
                   colorScheme="teal"
@@ -154,8 +157,9 @@ const Page = ({postList,image}) => {
               </Link>
             </GridItem>
             <GridItem>
-              <Link href="https://o-sofuoglu.medium.com/" target="_blank">
+              <Link href="https://o-sofuoglu.medium.com/" target="_blank" _hover={{borderBottom:'1px solid teal'}} >
                 <Button
+                _hover={'none'}
                   p={0}
                   variant="ghost"
                   colorScheme="teal"
@@ -166,8 +170,9 @@ const Page = ({postList,image}) => {
               </Link>
             </GridItem>
             <GridItem>
-              <Link href="https://www.twitter.com/ogzhnn_" target="_blank">
+              <Link href="https://www.twitter.com/ogzhnn_" target="_blank" _hover={{borderBottom:'1px solid teal'}} >
                 <Button
+                _hover={'none'}
                   p={0}
                   variant="ghost"
                   colorScheme="teal"
@@ -178,8 +183,9 @@ const Page = ({postList,image}) => {
               </Link>
             </GridItem>
             <GridItem>
-              <Link href="https://www.instagram.com/ogzhnsfgl" target="_blank">
+              <Link href="https://www.instagram.com/ogzhnsfgl" target="_blank" _hover={{borderBottom:'1px solid teal'}} >
                 <Button
+                _hover={'none'}
                   p={0}
                   variant="ghost"
                   colorScheme="teal"
