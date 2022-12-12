@@ -25,7 +25,7 @@ export default PostDetail;
 
 export const getStaticPaths = async () => {
   const res = await fetch(
-    `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@osofuoglu`
+    `https://api.rss2json.com/v1/api.json?rss_url=https://osofuoglu.medium.com/feed`
   );
   const data = await res.json();
 
@@ -46,7 +46,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
   const { params } = context;
   const res = await fetch(
-    `https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@osofuoglu`
+    `https://api.rss2json.com/v1/api.json?rss_url=https://osofuoglu.medium.com/feed`
   );
   const data = await res.json();
   const post = data.items[params.id - 1];
