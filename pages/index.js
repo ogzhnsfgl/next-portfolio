@@ -23,12 +23,9 @@ import {
   IoMail,
 } from "react-icons/io5";
 import Image from "next/image";
-import styled from "@emotion/styled";
 import { PostGridItem } from "../components/grid-item";
 
 const Page = ({postList,image}) => {
-
-
   return (
     <Layout>
       <Container>
@@ -66,6 +63,7 @@ const Page = ({postList,image}) => {
               width="100px"
             >
               <Image
+                priority
                 alt="ProfilePic"
                 src={image}
                 width={100}

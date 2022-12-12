@@ -31,6 +31,7 @@ export const PostGridItem = ({ children, href, title, thumbnail }) => (
         loading="lazy"
         width="600"
         height="380"
+        priority
       />
       <LinkOverlay href={href}>
         <Text mt={2}>{title}</Text>
