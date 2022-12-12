@@ -117,6 +117,7 @@ const Page = ({postList,image}) => {
             <GridItem>
               <Link href="https://www.github.com/ogzhnsfgl" target="_blank">
                 <Button
+                  p={0}
                   variant="ghost"
                   colorScheme="teal"
                   leftIcon={<Icon as={IoLogoGithub} />}
@@ -128,6 +129,7 @@ const Page = ({postList,image}) => {
             <GridItem>
               <Link href="mailto://o.sofuoglu@yahoo.com" target="_blank">
                 <Button
+                  p={0}
                   variant="ghost"
                   colorScheme="teal"
                   leftIcon={<Icon as={IoMail} />}
@@ -142,6 +144,7 @@ const Page = ({postList,image}) => {
                 target="_blank"
               >
                 <Button
+                  p={0}
                   variant="ghost"
                   colorScheme="teal"
                   leftIcon={<Icon as={IoLogoLinkedin} />}
@@ -153,6 +156,7 @@ const Page = ({postList,image}) => {
             <GridItem>
               <Link href="https://o-sofuoglu.medium.com/" target="_blank">
                 <Button
+                  p={0}
                   variant="ghost"
                   colorScheme="teal"
                   leftIcon={<Icon as={IoLogoMedium} />}
@@ -164,6 +168,7 @@ const Page = ({postList,image}) => {
             <GridItem>
               <Link href="https://www.twitter.com/ogzhnn_" target="_blank">
                 <Button
+                  p={0}
                   variant="ghost"
                   colorScheme="teal"
                   leftIcon={<Icon as={IoLogoTwitter} />}
@@ -175,6 +180,7 @@ const Page = ({postList,image}) => {
             <GridItem>
               <Link href="https://www.instagram.com/ogzhnsfgl" target="_blank">
                 <Button
+                  p={0}
                   variant="ghost"
                   colorScheme="teal"
                   leftIcon={<Icon as={IoLogoInstagram} />}
