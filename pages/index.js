@@ -161,7 +161,7 @@ const Page = ({postList,image}) => {
               </Link>
             </GridItem>
             <GridItem>
-              <Link href="https://o-sofuoglu.medium.com/" target="_blank" _hover={{borderBottom:'1px solid teal'}} >
+              <Link href="https://osofuoglu.medium.com/" target="_blank" _hover={{borderBottom:'1px solid teal'}} >
                 <Button
                 _hover={'none'}
                   p={0}
