@@ -7,7 +7,7 @@ const Posts = ({ postList }) => (
   <Layout title="Posts">
     <Container>
       <Heading as="h4" fontSize={20} my={12}>
-        Popular Posts
+        Posts
       </Heading>
       <Section delay={0.5}>
         <SimpleGrid columns={[1, 2, 2]} gap={6}>

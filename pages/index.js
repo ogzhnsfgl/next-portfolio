@@ -90,7 +90,11 @@ const Page = ({postList,image}) => {
             Bio
           </Heading>
           <BioSection>
-            <BioYear>Dec,2021 to Present</BioYear>
+            <BioYear>Dec,2022 to Present</BioYear>
+            Frontend Developer | Ciceksepeti.com / Mizu.com
+          </BioSection>
+          <BioSection>
+            <BioYear>Dec,2021 to Dec,2022</BioYear>
             Jr. Frontend Developer | Ciceksepeti.com / Mizu.com
           </BioSection>
         </Section>
