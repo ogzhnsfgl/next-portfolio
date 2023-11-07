@@ -1,13 +1,5 @@
 {
   "root": true,
   "extends": "next/core-web-vitals",
-  "rules": {
-    "no-unused-vars": [
-      "error",
-      {
-        "argsIgnorePatttern": "^_",
-        "varsIgnorePatttern": "^_"
-      }
-    ]
-  }
+  "rules":{"react/no-unescaped-entities": "off"}
 }
