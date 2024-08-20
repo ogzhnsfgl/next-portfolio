@@ -1,49 +1,51 @@
 import {
   Box,
-  Container,
-  Heading,
-  useColorModeValue,
-  Link,
   Button,
-  SimpleGrid,
-  Icon,
+  Container,
   GridItem,
-  Text
-} from "@chakra-ui/react";
-import Section from "../components/section";
-import Layout from "../components/layouts/article";
-import Paragraph from "../components/paragraph";
-import { BioSection, BioYear } from "../components/bio";
+  Heading,
+  Icon,
+  Link,
+  SimpleGrid,
+  Text,
+  useColorModeValue
+} from '@chakra-ui/react'
+import Image from 'next/image'
 import {
-  IoLogoTwitter,
+  IoLogoGithub,
   IoLogoInstagram,
   IoLogoLinkedin,
-  IoLogoGithub,
   IoLogoMedium,
-  IoMail,
-} from "react-icons/io5";
-import Image from "next/image";
-import {  PostIndexGridItem } from "../components/grid-item";
+  IoLogoTwitter,
+  IoMail
+} from 'react-icons/io5'
+import { BioSection, BioYear } from '../components/bio'
+import { PostIndexGridItem } from '../components/grid-item'
+import Layout from '../components/layouts/article'
+import Paragraph from '../components/paragraph'
+import Section from '../components/section'
 
-const Page = ({postList,image}) => {
+const Page = ({ postList, image }) => {
   return (
     <Layout>
       <Container>
         <Box
           borderRadius="lg"
-          bg={useColorModeValue("whiteAlpha.500", "whiteAlpha.200")}
+          bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
           p={3}
           my={12}
           align="center"
         >
           Hello, I'm software developer from Turkey.
         </Box>
-        <Box display={{ md: "flex" }}>
+        <Box display={{ md: 'flex' }}>
           <Box flexGrow={1}>
             <Heading as="h2" variant="page-title">
               Oğuzhan Sofuoğlu
             </Heading>
-                <Text color={useColorModeValue("blackAlpha.700", "whiteAlpha.600")}>Frontend Developer - @Ciceksepeti, Ankara</Text>
+            <Text color={useColorModeValue('blackAlpha.700', 'whiteAlpha.600')}>
+              Frontend Developer - @Trendyol, Istanbul
+            </Text>
           </Box>
           <Box
             flexShrink={0}
@@ -58,7 +60,7 @@ const Page = ({postList,image}) => {
               maxWidth="100px"
               borderRadius="full"
               display="inline-block"
-              overflow={"hidden"}
+              overflow={'hidden'}
               height="100px"
               width="100px"
             >
@@ -90,7 +92,11 @@ const Page = ({postList,image}) => {
             Bio
           </Heading>
           <BioSection>
-            <BioYear>Dec,2022 to Present</BioYear>
+            <BioYear>May,2024 to Present</BioYear>
+            Associate Software Developer | Trendyol
+          </BioSection>
+          <BioSection>
+            <BioYear>Dec,2022 to May, 2024</BioYear>
             Frontend Developer | Ciceksepeti.com / Mizu.com
           </BioSection>
           <BioSection>
@@ -99,27 +105,31 @@ const Page = ({postList,image}) => {
           </BioSection>
         </Section>
         <Section delay={0.5}>
-         <Heading as="h3" variant="section-title">
+          <Heading as="h3" variant="section-title">
             Posts
           </Heading>
-        <Box >
-          {postList.map((post, idx) => (
-            <PostIndexGridItem
-              title={post.title}
-              thumbnail={post.thumbnail}
-              key={post.title}
-              href={`posts/${idx + 1}`}
-            />
-          ))}
-        </Box>
-      </Section>
+          <Box>
+            {postList.map((post, idx) => (
+              <PostIndexGridItem
+                title={post.title}
+                thumbnail={post.thumbnail}
+                key={post.title}
+                href={`posts/${idx + 1}`}
+              />
+            ))}
+          </Box>
+        </Section>
         <Section delay={0.6}>
           <Heading as="h3" variant="section-title">
             Social Media & Contact
           </Heading>
           <SimpleGrid columns={{ sm: 2 }} gap={1}>
-            <GridItem >
-              <Link href="https://www.github.com/ogzhnsfgl" target="_blank" _hover={{borderBottom:'1px solid teal'}} >
+            <GridItem>
+              <Link
+                href="https://www.github.com/ogzhnsfgl"
+                target="_blank"
+                _hover={{ borderBottom: '1px solid teal' }}
+              >
                 <Button
                   _hover={'none'}
                   p={0}
@@ -132,9 +142,13 @@ const Page = ({postList,image}) => {
               </Link>
             </GridItem>
             <GridItem>
-              <Link href="mailto://o.sofuoglu@yahoo.com" target="_blank" _hover={{borderBottom:'1px solid teal'}} >
+              <Link
+                href="mailto://o.sofuoglu@yahoo.com"
+                target="_blank"
+                _hover={{ borderBottom: '1px solid teal' }}
+              >
                 <Button
-                _hover={'none'}
+                  _hover={'none'}
                   p={0}
                   variant="ghost"
                   colorScheme="teal"
@@ -147,10 +161,11 @@ const Page = ({postList,image}) => {
             <GridItem>
               <Link
                 href="https://www.linkedin.com/in/oguzhan-sofuoglu/"
-                target="_blank" _hover={{borderBottom:'1px solid teal'}}
+                target="_blank"
+                _hover={{ borderBottom: '1px solid teal' }}
               >
                 <Button
-                _hover={'none'}
+                  _hover={'none'}
                   p={0}
                   variant="ghost"
                   colorScheme="teal"
@@ -161,9 +176,13 @@ const Page = ({postList,image}) => {
               </Link>
             </GridItem>
             <GridItem>
-              <Link href="https://osofuoglu.medium.com/" target="_blank" _hover={{borderBottom:'1px solid teal'}} >
+              <Link
+                href="https://osofuoglu.medium.com/"
+                target="_blank"
+                _hover={{ borderBottom: '1px solid teal' }}
+              >
                 <Button
-                _hover={'none'}
+                  _hover={'none'}
                   p={0}
                   variant="ghost"
                   colorScheme="teal"
@@ -174,9 +193,13 @@ const Page = ({postList,image}) => {
               </Link>
             </GridItem>
             <GridItem>
-              <Link href="https://www.twitter.com/ogzhnn_" target="_blank" _hover={{borderBottom:'1px solid teal'}} >
+              <Link
+                href="https://www.twitter.com/ogzhnn_"
+                target="_blank"
+                _hover={{ borderBottom: '1px solid teal' }}
+              >
                 <Button
-                _hover={'none'}
+                  _hover={'none'}
                   p={0}
                   variant="ghost"
                   colorScheme="teal"
@@ -187,9 +210,13 @@ const Page = ({postList,image}) => {
               </Link>
             </GridItem>
             <GridItem>
-              <Link href="https://www.instagram.com/ogzhnsfgl" target="_blank" _hover={{borderBottom:'1px solid teal'}} >
+              <Link
+                href="https://www.instagram.com/ogzhnsfgl"
+                target="_blank"
+                _hover={{ borderBottom: '1px solid teal' }}
+              >
                 <Button
-                _hover={'none'}
+                  _hover={'none'}
                   p={0}
                   variant="ghost"
                   colorScheme="teal"
@@ -203,23 +230,24 @@ const Page = ({postList,image}) => {
         </Section>
       </Container>
     </Layout>
-  );
-};
+  )
+}
 
-export default Page;
+export default Page
 
 export const getStaticProps = async () => {
   const response = await fetch(
     `https://api.rss2json.com/v1/api.json?rss_url=https://osofuoglu.medium.com/feed`
-  );
-  const data = await response.json();
-  console.log(data);
+  )
+  const data = await response.json()
+  console.log(data)
 
   return {
     props: {
       postList: data.items,
-      image : data.feed.image
+      image: data.feed.image
     },
-    revalidate: 100,
-  };
-};
+    revalidate: 100
+  }
+}
+
